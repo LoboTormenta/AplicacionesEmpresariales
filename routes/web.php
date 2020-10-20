@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\prueba;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,7 @@ use App\Http\Controllers\prueba;
 |
 */
 
-Route::get('/empleados', [prueba::class, 'index']);
+Route::get('/empleado', [prueba::class, 'index']);
 
 Route::post('/guardar', [prueba::class, 'create'])->name('empleados.guardar');
 
