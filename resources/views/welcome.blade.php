@@ -12,12 +12,44 @@
     <title>Prueba de Query - Laravel</title>
   </head>
   <body>
+
+
+    <form class="mt-5" action = "{{ route('empleados.guardar') }}" method ="POST">
+        @csrf
+            <table>
+            <tr>
+            <td>Nombre</td>
+            <td><input class="form-control" type='text' name='nombre' placeholder="Ingresa nombre" /></td>
+            <tr>
+            <td>Apellido Paterno</td>
+            <td><input  class="form-control" type="text" name='apaterno' placeholder="Ingresa apellido paterno"/></td>
+            </tr>
+
+          <tr>
+            <td>Apellido Materno</td>
+            <td><input class="form-control" type="text" name='amaterno' placeholder="Ingresa apellido materno"/></td>
+            </tr>
+
+
+          <tr>
+            <td>Puesto</td>
+            <td><input  class="form-control" type="text" name='puesto' placeholder="Ingresa apellido materno" /></td>
+            </tr>
+
+
+            <tr>
+            <td colspan = '2'>
+            <input class="btn btn-primary" type = 'submit' value = "Agregar empleado"/>
+            </td>
+            </tr>
+            </table>
+        </form>
    <div class="container my-4">
 
      <h1 class="display-4">Empleados</h1>
    </div>
 
-   <table class="table">
+   <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#id</th>
@@ -37,8 +69,8 @@
   @foreach($empleados as $item)
     <tr>
       <th scope="row">{{$item->id}}</th>
-      <td>{{$item->nombre}}</td>
       <td>{{$item->apaterno}}</td>
+      <td>{{$item->nombre}}</td>
       <td>{{$item->amaterno}}</td>
       <td>{{$item->puesto}}</td>
       <td>{{$item->created_at}}</td>
@@ -51,36 +83,7 @@
 
 
 
-<form action = "{{ route('empleados.guardar') }}" method ="POST">
-@csrf
-	<table>
-	<tr>
-	<td>Nombre</td>
-	<td><input type='text' name='nombre' /></td>
-	<tr>
-	<td>Apellido Paterno</td>
-	<td><input type="text" name='apaterno'/></td>
-	</tr>
 
-  <tr>
-	<td>Apellido Materno</td>
-	<td><input type="text" name='amaterno'/></td>
-	</tr>
-
-
-  <tr>
-	<td>Puesto</td>
-	<td><input type="text" name='puesto'/></td>
-	</tr>
-
-
-	<tr>
-	<td colspan = '2'>
-	<input type = 'submit' value = "Agregar empleado"/>
-	</td>
-	</tr>
-	</table>
-</form>
       <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
