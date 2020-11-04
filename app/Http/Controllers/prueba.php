@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models;
+use App\Models\Empleado;
 
 
 use Illuminate\Http\Request;
@@ -16,28 +16,40 @@ use Illuminate\Validation\Rule;
 
 class prueba extends Controller
 {
-  public function index(){
+    public function index()
+    {
 
-    $empleados = Models\Empleado::all();
+        $empleados = Empleado::all();
+
+        return view('welcome', compact('empleados'), ['empleados' => $empleados]);
+    }
+
+    public function create(Request $request)
+    {
+
+        // return $request->all();
+
+        $empleado = new Empleado();
+        $empleado->nombre = $request->nombre;
+        $empleado->apaterno = $request->apaterno;
+        $empleado->amaterno = $request->amaterno;
+        $empleado->puesto = $request->puesto;
+
+        $empleado->save();
+
+        return back();
+    }
+    public function update(Request $request, empleado $empleado)
+    {
+
+        $empleado = Empleado::findOrFail($request->id);
+        $empleado->nombre = $request->nombre;
+        $empleado->apaterno = $request->apaterno;
+        $empleado->amaterno = $request->amaterno;
+        $empleado->puesto = $request->puesto;
+        $empleado->save();
+    }
 
 
 
-      return view('welcome', compact('empleados'));
-  }
-
-  public function create(Request $request)
-  {
-
-      // return $request->all();
-
-      $empleadoNuevo = new Models\Empleado;
-      $empleadoNuevo->nombre = $request->nombre;
-      $empleadoNuevo->apaterno = $request->apaterno;
-      $empleadoNuevo->amaterno = $request->amaterno;
-      $empleadoNuevo->puesto= $request->puesto;
-
-      $empleadoNuevo->save();
-
-      return back();
-  }
 }

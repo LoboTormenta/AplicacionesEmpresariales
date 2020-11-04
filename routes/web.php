@@ -22,5 +22,8 @@ Route::get('/empleado', [prueba::class, 'index']);
 
 Route::post('/guardar', [prueba::class, 'create'])->name('empleados.guardar');
 
+// Route::put('/editar', [prueba::class, 'update'])->name('empleados.editar');
+
+
 
 
