@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "2e124529-ec21-490e-861e-eeb78f08ac2e",
+		"name": "Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Laravel",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "root",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "csrf-to",
+						"value": "L1EnBJPjhc6upal9PgpMpD3hJxrqYdwp2mayqB0P",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Ac",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"nombre\" : \"El Guiller\",\n \"apellido\": \"Cubeiro\"\n\n}"
+				},
+				"url": {
+					"raw": "http://localhost/alumnos/public/guardar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"alumnos",
+						"public",
+						"guardar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ge token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
