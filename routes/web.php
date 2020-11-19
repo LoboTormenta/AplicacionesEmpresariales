@@ -37,3 +37,7 @@ Route::get('/empleado', [prueba::class, 'index']);
 Route::post('/empleado/registrar', [prueba::class, 'create']);
 Route::put('/empleado/actualizar', [prueba::class, 'update']);
 Route::delete('empleado/eliminar/{id}', [prueba::class, 'destroy']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
